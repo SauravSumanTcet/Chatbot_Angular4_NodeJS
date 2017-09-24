@@ -1,0 +1,22 @@
+<div class="chatbot">
+  <div class="wrapper" [@fade]="fade">
+    <div class="header"><h2>ChatKit</h2></div>
+    <div #scrollMe class="content">
+      <div>
+        <p [ngClass]="x.status=='bot'?'leftMsg':'rightMsg'" *ngFor="let x of messages">
+          {{x.msg}}
+        </p>
+      </div>
+    </div>
+    <div class="footer">
+      <textarea class="msg" type="text" name="msg" rows="2"
+      [(ngModel)]="chatbot.msgToSend"
+      placeholder="Send a message..."
+      (keydown)="keyDownFunction($event,this)" ></textarea>
+    </div>
+  </div>
+  <div [@myAwesomeAnimation]='state[0]' (click)="animateMe(0)" class="chatbot-toggle">
+    <div class="openIcon" *ngIf="state[0]=='small'" [ngStyle]="openIcon"></div>
+    <div class="closeIcon" *ngIf="state[0]=='large'" [ngStyle]="closeIcon"></div>
+  </div>
+</div>

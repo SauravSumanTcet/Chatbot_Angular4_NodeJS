@@ -1,0 +1,110 @@
+$main-color: hsla(199, 76%, 58%,1);
+$circle-radius: 5vw;
+$radius-px: 30px;
+.chatbot{
+    position: fixed;
+    bottom: $radius-px;
+    right: $radius-px;
+    .chatbot-toggle{
+        cursor: pointer;
+        min-width:$radius-px;
+        min-height:$radius-px;
+        width: $circle-radius;
+        height: $circle-radius;
+        border-radius: 50%;
+        float: right;
+        background: $main-color;
+        .closeIcon{
+            width: $circle-radius;
+            height: $circle-radius;
+            background-size: 14px 14px;
+            background-repeat: no-repeat;
+            background-position: center 24px;
+            opacity: 1;
+        }
+        .openIcon{
+            width: $circle-radius;
+            height: $circle-radius;
+            background-size: 32px 36px;
+            background-repeat: no-repeat;
+            background-position: center 14px;
+            opacity: 1;
+        }
+    }
+    .wrapper {
+        opacity: 0;
+        visibility: hidden;
+        min-height: 60vh;
+        height: 50vh;
+        min-width:300px;
+        width: 20vw;
+        border-radius: 1.5vh;
+        box-shadow:-1px -2px 4px 4px rgba(170, 170, 170, 0.51);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .header{
+            height: 60px;
+            background: lighten($main-color,30%);
+            padding-left: 1vw;
+        }
+        .content {
+            flex: 1;
+            overflow: auto;
+            max-width: 100%;
+            background-image: url(../../assets/img/background.png);
+            .leftMsg{
+                overflow-wrap: break-word;
+                text-align: left;
+                color: #fff;
+                margin: 1vw;
+                margin-left: 2vw;
+                margin-right: 0px;
+                padding: 1vw;
+                border-radius: 20px;
+                background: lighten(blue,30%);
+                border-right: none;
+                border-left: none;
+            }
+            .rightMsg{
+                padding: 1vw;
+                overflow-wrap: break-word;
+                text-align: right;
+                color: blue;
+                border-radius: 20px;
+                background: lighten(#00FF15,30%);
+                border-right: none;
+                border-left: none;
+            }
+        }
+        .footer {
+            height: 55px;
+            display: flex;
+            .msg{
+                width: 100%;    
+                color: #565867;
+                background-color: #f4f7f9;
+                border: none;
+                transition: background-color .2s ease,box-shadow .2s ease;
+                resize: none;
+                outline: none;
+                padding: 1vw;
+                padding-left: 1vw;
+                font-size: 1.2vw;
+            }
+        }
+    }
+}
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 2px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $main-color;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: $main-color;
+}
+
